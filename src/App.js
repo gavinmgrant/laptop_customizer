@@ -9,32 +9,32 @@ class App extends Component {
     this.state = {
       selected: {
         Processor: {
-          name: '17th Generation Intel Core HB (7 Core with donut spare)',
-          cost: 700
+          name: this.props.features.Processor[0].name,
+          cost: this.props.features.Processor[0].cost
         },
         'Operating System': {
-          name: 'Ubuntu Linux 16.04',
-          cost: 200
+          name: this.props.features['Operating System'][0].name,
+          cost: this.props.features['Operating System'][0].cost
         },
         'Video Card': {
-          name: 'Toyota Corolla 1.5v',
-          cost: 1150.98
+          name: this.props.features['Video Card'][0].name,
+          cost: this.props.features['Video Card'][0].cost
         },
         Display: {
-          name: '15.6" UHD (3840 x 2160) 60Hz Bright Lights and Knobs',
-          cost: 1500
+          name: this.props.features.Display[0].name,
+          cost: this.props.features.Display[0].cost
         }
       }
     };
   }
 
   updateSelected = (feature, newValue) => {
-    const selected = Object.assign({}, this.props.handleSelection());
+    const selected = Object.assign({}, this.state.selected);
     selected[feature] = newValue;
     this.setState({
         selected
     });
-};
+  };
 
   render() {
     return (
@@ -46,7 +46,7 @@ class App extends Component {
           <CustomizeLaptop 
             features={this.props.features}
             selected={this.state.selected}
-            handleSelection={e => this.updateSelected(e)}/>
+            handleSelection={this.updateSelected}/>
           <YourCart 
             selected={this.state.selected}/>
         </main>

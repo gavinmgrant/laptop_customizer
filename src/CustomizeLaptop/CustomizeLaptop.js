@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './CustomizeLaptop.css';
 import slugify from 'slugify';
 
 class CustomizeLaptop extends Component {
