@@ -43,8 +43,4 @@ class AllFeatures extends Component {
     }
 };
 
-AllFeatures.defaultProp = {
-    handleSelected: () => {},
-}
-
 export default AllFeatures;

@@ -9,7 +9,7 @@ class CustomizeLaptop extends Component {
                 <AllFeatures
                     features={this.props.features}
                     selected={this.props.selected}
-                    handleSelection={this.props.updateSelected}/>
+                    handleSelection={this.props.handleSelection}/>
             </form>
         );
     }
